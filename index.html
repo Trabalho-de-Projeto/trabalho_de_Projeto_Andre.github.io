@@ -1,12 +1,91 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-PT">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>404 - Página não encontrada</title>
-    <link rel="stylesheet" href="estilo.css">
-    <script src="background.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Escolar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #001a4d;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            font-size: 48px;
+            color: #001a4d;
+            font-weight: bold;
+        }
+
+        .boxes {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            min-width: 200px;
+            border-top: 4px solid #ff8c00;
+        }
+
+        .box h3 {
+            color: #001a4d;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .box p {
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <h2>Bem-vindo à Escola Secundária de Pombal</h2>
+    </header>
+    
+    <div class="container">
+        <h1>Painel Escolar</h1>
+        
+        <div class="boxes">
+            <div class="box">
+                <h3>Temperaturas</h3>
+                <p>Temperaturas das salas mais importantes da Escola</p>
+            </div>
+            <div class="box">
+                <h3>Eventos</h3>
+                <p>Eventos escolares que estão acontecendo no momento</p>
+            </div>
+            <div class="box">
+                <h3>Ocupação das salas</h3>
+                <p>Fique atento para não roubar o seu lugar</p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

@@ -1,33 +1,39 @@
-(function () {
-    function mount() {
-        if (document.getElementById('painel-controlo-escolar')) return;
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Escolar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-        const container = document.createElement('div');
-        container.id = 'painel-controlo-escolar';
-        Object.assign(container.style, {
-            position: 'fixed',
-            inset: '0',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            background: '#ffffff',
-            color: '#111',
-            zIndex: '2147483647',
-            fontFamily: "system-ui, 'Segoe UI', Roboto, Arial, sans-serif",
-            fontSize: '48px',
-            fontWeight: '600',
-            margin: '0',
-            padding: '0',
-            textAlign: 'center'
-        });
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
 
-        container.textContent = 'Painel de controlo Escolar';
-        document.body.appendChild(container);
-    }
+        .container {
+            text-align: center;
+        }
 
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', mount);
-    } else {
-        mount();
-    }
-})();
+        h1 {
+            font-size: 48px;
+            color: #333;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Painel Escolar</h1>
+    </div>
+</body>
+</html>
