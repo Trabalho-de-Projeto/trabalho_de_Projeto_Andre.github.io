@@ -13,78 +13,66 @@
 
         body {
             font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
+            background: linear-gradient(135deg, #0066cc 0%, #ff9933 100%);
+            padding: 20px;
             min-height: 100vh;
         }
 
-        header {
-            background-color: #001a4d;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .container {
-            text-align: center;
-            padding: 40px 20px;
+        .icon-top-right {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 100px;
+            height: auto;
+            z-index: 1000;
         }
 
         h1 {
-            font-size: 48px;
-            color: #001a4d;
-            font-weight: bold;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 40px;
+            font-size: 2.5em;
         }
 
-        .boxes {
+        .container {
             display: flex;
-            gap: 20px;
             justify-content: center;
+            gap: 30px;
             flex-wrap: wrap;
-            margin-top: 30px;
         }
 
-        .box {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            min-width: 200px;
-            border-top: 4px solid #ff8c00;
+        .triangle-box {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            background-color: #4CAF50;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .box h3 {
-            color: #001a4d;
-            margin-bottom: 10px;
-            font-size: 20px;
-        }
-
-        .box p {
-            color: #666;
-            font-size: 14px;
+        .text {
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            width: 120px;
+            font-size: 0.9em;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h2>Bem-vindo à Escola Secundária de Pombal</h2>
-    </header>
-    
+    <img src="assets/COR-Opaco-7.5cm-JPG-AEP-2017.jpg" alt="Logo" class="icon-top-right">
+    <h1>Painel Escolar</h1>
     <div class="container">
-        <h1>Painel Escolar</h1>
-        
-        <div class="boxes">
-            <div class="box">
-                <h3>Temperaturas</h3>
-                <p>Temperaturas das salas mais importantes da Escola</p>
-            </div>
-            <div class="box">
-                <h3>Eventos</h3>
-                <p>Eventos escolares que estão acontecendo no momento</p>
-            </div>
-            <div class="box">
-                <h3>Ocupação das salas</h3>
-                <p>Fique atento para não roubar o seu lugar</p>
-            </div>
+        <div class="triangle-box">
+            <div class="text">Temperatura das salas</div>
+        </div>
+        <div class="triangle-box">
+            <div class="text">Temperatura das salas</div>
+        </div>
+        <div class="triangle-box">
+            <div class="text">Temperatura das salas</div>
         </div>
     </div>
 </body>
