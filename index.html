@@ -13,18 +13,21 @@
 
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #0066cc 0%, #ff9933 100%);
+            background: linear-gradient(135deg, #292929 0%, #292929 100%);
             padding: 20px;
             min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .icon-top-right {
             position: fixed;
-            top: 20px;
-            right: 20px;
-            width: 100px;
+            top: 40px;
+            right: 40px;
+            width: 150px;
             height: auto;
-            z-index: 1000;
+            z-index: 950;
         }
 
         h1 {
@@ -35,44 +38,133 @@
         }
 
         .container {
-            display: flex;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             gap: 30px;
-            flex-wrap: wrap;
+            max-width: 900px;
+            width: 100%;
         }
 
-        .triangle-box {
-            position: relative;
-            width: 150px;
-            height: 150px;
-            background-color: #4CAF50;
-            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+        .card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .label-box {
             display: flex;
             align-items: center;
+            gap: 10px;
+            width: 100%;
             justify-content: center;
         }
 
-        .text {
+        .label {
             color: white;
             font-weight: bold;
             text-align: center;
-            width: 120px;
-            font-size: 0.9em;
+            font-size: 0.95em;
+        }
+
+        .blue-box {
+            width: 12px;
+            height: 12px;
+            background-color: #5517ff;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .triangle-box {
+            width: 100%;
+            height: 120px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
+            border: 2px solid #5517ff;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+            font-size: 5.1em;
+            font-weight: bolder;
+            color: #0066cc;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .triangle-box-2 {
+            width: 100%;
+            height: 120px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
+            border: 2px solid #5517ff;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+            font-size: 2.1em;
+            font-weight: bold; 
+            color: #0066cc;
+            text-align: center;
+            padding: 15px;
+        }
+
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <img src="assets/COR-Opaco-7.5cm-JPG-AEP-2017.jpg" alt="Logo" class="icon-top-right">
-    <h1>Painel Escolar</h1>
+    <img src="assets/COR-Opaco-7.5cm-JPG-AEP-2017-removebg-preview.png" alt="Logo" class="icon-top-right">
+    <h1 class="title-text">Painel Escolar</h1>
     <div class="container">
-        <div class="triangle-box">
-            <div class="text">Temperatura das salas</div>
+        <div class="card">
+            <div class="label-box">
+                <div class="blue-box"></div>
+                <div class="label">Temperatura das salas</div>
+            </div>
+            <div class="triangle-box" id="temp1">25°C</div>
         </div>
-        <div class="triangle-box">
-            <div class="text">Temperatura das salas</div>
+        <div class="card">
+            <div class="label-box">
+                <div class="blue-box"></div>
+                <div class="label">Humidade das Salas</div>
+            </div>
+            <div class="triangle-box" id="temp2">30%</div>
         </div>
-        <div class="triangle-box">
-            <div class="text">Temperatura das salas</div>
+        <div class="card">
+            <div class="label-box">
+                <div class="blue-box"></div>
+                <div class="label">Qualidade do ar</div>
+            </div>
+            <div class="triangle-box" id="temp3">30%</div>
+        </div>
+        <div class="card">
+            <div class="label-box">
+                <div class="blue-box"></div>
+                <div class="label">Ementa do dia</div>
+            </div>
+            <div class="triangle-box-2" id="temp4">Carne de Porco com arroz</div>
         </div>
     </div>
 </body>
